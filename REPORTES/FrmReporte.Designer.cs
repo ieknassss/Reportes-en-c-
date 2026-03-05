@@ -1,6 +1,6 @@
 ﻿namespace REPORTES
 {
-    partial class Form1
+    partial class FrmReporte
     {
         /// <summary>
         /// Variable del diseñador necesaria.
