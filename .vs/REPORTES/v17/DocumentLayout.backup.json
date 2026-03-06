@@ -3,72 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C9623BBD-FFB8-4EBB-8F8B-57C2FFBF5A69}|REPORTES\\REPORTES.csproj|c:\\users\\cs065\\documents\\reportes-en-c-\\reportes\\domain\\mora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C9623BBD-FFB8-4EBB-8F8B-57C2FFBF5A69}|REPORTES\\REPORTES.csproj|solutionrelative:reportes\\domain\\mora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C9623BBD-FFB8-4EBB-8F8B-57C2FFBF5A69}|REPORTES\\REPORTES.csproj|c:\\users\\cs065\\documents\\reportes-en-c-\\reportes\\domain\\pago.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C9623BBD-FFB8-4EBB-8F8B-57C2FFBF5A69}|REPORTES\\REPORTES.csproj|solutionrelative:reportes\\domain\\pago.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C9623BBD-FFB8-4EBB-8F8B-57C2FFBF5A69}|REPORTES\\REPORTES.csproj|c:\\users\\cs065\\documents\\reportes-en-c-\\reportes\\domain\\prestamo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C9623BBD-FFB8-4EBB-8F8B-57C2FFBF5A69}|REPORTES\\REPORTES.csproj|solutionrelative:reportes\\domain\\prestamo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C9623BBD-FFB8-4EBB-8F8B-57C2FFBF5A69}|REPORTES\\REPORTES.csproj|c:\\users\\cs065\\documents\\reportes-en-c-\\reportes\\domain\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C9623BBD-FFB8-4EBB-8F8B-57C2FFBF5A69}|REPORTES\\REPORTES.csproj|solutionrelative:reportes\\domain\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C9623BBD-FFB8-4EBB-8F8B-57C2FFBF5A69}|REPORTES\\REPORTES.csproj|c:\\users\\cs065\\documents\\reportes-en-c-\\reportes\\services\\reporteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C9623BBD-FFB8-4EBB-8F8B-57C2FFBF5A69}|REPORTES\\REPORTES.csproj|solutionrelative:reportes\\services\\reporteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C9623BBD-FFB8-4EBB-8F8B-57C2FFBF5A69}|REPORTES\\REPORTES.csproj|C:\\Users\\cs065\\Documents\\Reportes-en-c-\\reportes\\dtos\\reporteamortizaciondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C9623BBD-FFB8-4EBB-8F8B-57C2FFBF5A69}|REPORTES\\REPORTES.csproj|solutionrelative:reportes\\dtos\\reporteamortizaciondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C9623BBD-FFB8-4EBB-8F8B-57C2FFBF5A69}|REPORTES\\REPORTES.csproj|C:\\Users\\cs065\\Documents\\Reportes-en-c-\\reportes\\dtos\\reportemorosodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C9623BBD-FFB8-4EBB-8F8B-57C2FFBF5A69}|REPORTES\\REPORTES.csproj|solutionrelative:reportes\\dtos\\reportemorosodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C9623BBD-FFB8-4EBB-8F8B-57C2FFBF5A69}|REPORTES\\REPORTES.csproj|C:\\Users\\cs065\\Documents\\Reportes-en-c-\\reportes\\dtos\\reportemoradto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C9623BBD-FFB8-4EBB-8F8B-57C2FFBF5A69}|REPORTES\\REPORTES.csproj|solutionrelative:reportes\\dtos\\reportemoradto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C9623BBD-FFB8-4EBB-8F8B-57C2FFBF5A69}|REPORTES\\REPORTES.csproj|C:\\Users\\cs065\\Documents\\Reportes-en-c-\\reportes\\dtos\\reportefinancierodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C9623BBD-FFB8-4EBB-8F8B-57C2FFBF5A69}|REPORTES\\REPORTES.csproj|solutionrelative:reportes\\dtos\\reportefinancierodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C9623BBD-FFB8-4EBB-8F8B-57C2FFBF5A69}|REPORTES\\REPORTES.csproj|C:\\Users\\cs065\\Documents\\Reportes-en-c-\\reportes\\dtos\\reporteclientedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C9623BBD-FFB8-4EBB-8F8B-57C2FFBF5A69}|REPORTES\\REPORTES.csproj|solutionrelative:reportes\\dtos\\reporteclientedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C9623BBD-FFB8-4EBB-8F8B-57C2FFBF5A69}|REPORTES\\REPORTES.csproj|C:\\Users\\cs065\\Documents\\Reportes-en-c-\\reportes\\services\\prestamoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C9623BBD-FFB8-4EBB-8F8B-57C2FFBF5A69}|REPORTES\\REPORTES.csproj|solutionrelative:reportes\\services\\prestamoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C9623BBD-FFB8-4EBB-8F8B-57C2FFBF5A69}|REPORTES\\REPORTES.csproj|C:\\Users\\cs065\\Documents\\Reportes-en-c-\\reportes\\services\\dbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C9623BBD-FFB8-4EBB-8F8B-57C2FFBF5A69}|REPORTES\\REPORTES.csproj|solutionrelative:reportes\\services\\dbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C9623BBD-FFB8-4EBB-8F8B-57C2FFBF5A69}|REPORTES\\REPORTES.csproj|C:\\Users\\cs065\\Documents\\Reportes-en-c-\\reportes\\calculations\\loancalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C9623BBD-FFB8-4EBB-8F8B-57C2FFBF5A69}|REPORTES\\REPORTES.csproj|solutionrelative:reportes\\calculations\\loancalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C9623BBD-FFB8-4EBB-8F8B-57C2FFBF5A69}|REPORTES\\REPORTES.csproj|C:\\Users\\cs065\\Documents\\Reportes-en-c-\\reportes\\model1.context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C9623BBD-FFB8-4EBB-8F8B-57C2FFBF5A69}|REPORTES\\REPORTES.csproj|solutionrelative:reportes\\model1.context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C9623BBD-FFB8-4EBB-8F8B-57C2FFBF5A69}|REPORTES\\REPORTES.csproj|C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\Pagos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C9623BBD-FFB8-4EBB-8F8B-57C2FFBF5A69}|REPORTES\\REPORTES.csproj|solutionrelative:REPORTES\\Pagos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C9623BBD-FFB8-4EBB-8F8B-57C2FFBF5A69}|REPORTES\\REPORTES.csproj|C:\\Users\\cs065\\Documents\\Reportes-en-c-\\reportes\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
-      "RelativeMoniker": "D:0:0:{C9623BBD-FFB8-4EBB-8F8B-57C2FFBF5A69}|REPORTES\\REPORTES.csproj|solutionrelative:reportes\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C9623BBD-FFB8-4EBB-8F8B-57C2FFBF5A69}|REPORTES\\REPORTES.csproj|C:\\Users\\cs065\\Documents\\Reportes-en-c-\\reportes\\frmreporte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C9623BBD-FFB8-4EBB-8F8B-57C2FFBF5A69}|REPORTES\\REPORTES.csproj|solutionrelative:reportes\\frmreporte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -78,214 +18,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Mora.cs",
-              "DocumentMoniker": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\Domain\\Mora.cs",
-              "RelativeDocumentMoniker": "REPORTES\\Domain\\Mora.cs",
-              "ToolTip": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\Domain\\Mora.cs",
-              "RelativeToolTip": "REPORTES\\Domain\\Mora.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-06T12:37:18.605Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Pago.cs",
-              "DocumentMoniker": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\Domain\\Pago.cs",
-              "RelativeDocumentMoniker": "REPORTES\\Domain\\Pago.cs",
-              "ToolTip": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\Domain\\Pago.cs",
-              "RelativeToolTip": "REPORTES\\Domain\\Pago.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-06T12:36:59.034Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Prestamo.cs",
-              "DocumentMoniker": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\Domain\\Prestamo.cs",
-              "RelativeDocumentMoniker": "REPORTES\\Domain\\Prestamo.cs",
-              "ToolTip": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\Domain\\Prestamo.cs",
-              "RelativeToolTip": "REPORTES\\Domain\\Prestamo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-06T12:36:33.811Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Cliente.cs",
-              "DocumentMoniker": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\Domain\\Cliente.cs",
-              "RelativeDocumentMoniker": "REPORTES\\Domain\\Cliente.cs",
-              "ToolTip": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\Domain\\Cliente.cs",
-              "RelativeToolTip": "REPORTES\\Domain\\Cliente.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-06T12:20:15.79Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ReporteFinancieroDto.cs",
-              "DocumentMoniker": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\DTOs\\ReporteFinancieroDto.cs",
-              "RelativeDocumentMoniker": "REPORTES\\DTOs\\ReporteFinancieroDto.cs",
-              "ToolTip": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\DTOs\\ReporteFinancieroDto.cs",
-              "RelativeToolTip": "REPORTES\\DTOs\\ReporteFinancieroDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-06T02:58:21.935Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ReporteMoraDto.cs",
-              "DocumentMoniker": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\DTOs\\ReporteMoraDto.cs",
-              "RelativeDocumentMoniker": "REPORTES\\DTOs\\ReporteMoraDto.cs",
-              "ToolTip": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\DTOs\\ReporteMoraDto.cs",
-              "RelativeToolTip": "REPORTES\\DTOs\\ReporteMoraDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-06T02:58:39.545Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ReporteMorosoDto.cs",
-              "DocumentMoniker": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\DTOs\\ReporteMorosoDto.cs",
-              "RelativeDocumentMoniker": "REPORTES\\DTOs\\ReporteMorosoDto.cs",
-              "ToolTip": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\DTOs\\ReporteMorosoDto.cs",
-              "RelativeToolTip": "REPORTES\\DTOs\\ReporteMorosoDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-06T02:58:54.635Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ReporteAmortizacionDto.cs",
-              "DocumentMoniker": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\DTOs\\ReporteAmortizacionDto.cs",
-              "RelativeDocumentMoniker": "REPORTES\\DTOs\\ReporteAmortizacionDto.cs",
-              "ToolTip": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\DTOs\\ReporteAmortizacionDto.cs",
-              "RelativeToolTip": "REPORTES\\DTOs\\ReporteAmortizacionDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-06T02:59:10.43Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ReporteService.cs",
-              "DocumentMoniker": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\Services\\ReporteService.cs",
-              "RelativeDocumentMoniker": "REPORTES\\Services\\ReporteService.cs",
-              "ToolTip": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\Services\\ReporteService.cs",
-              "RelativeToolTip": "REPORTES\\Services\\ReporteService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-06T02:59:34.87Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ReporteClienteDto.cs",
-              "DocumentMoniker": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\DTOs\\ReporteClienteDto.cs",
-              "RelativeDocumentMoniker": "REPORTES\\DTOs\\ReporteClienteDto.cs",
-              "ToolTip": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\DTOs\\ReporteClienteDto.cs",
-              "RelativeToolTip": "REPORTES\\DTOs\\ReporteClienteDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-06T02:57:54.612Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "PrestamoService.cs",
-              "DocumentMoniker": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\Services\\PrestamoService.cs",
-              "RelativeDocumentMoniker": "REPORTES\\Services\\PrestamoService.cs",
-              "ToolTip": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\Services\\PrestamoService.cs",
-              "RelativeToolTip": "REPORTES\\Services\\PrestamoService.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAuwKgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-06T02:10:17.835Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "DbContextFactory.cs",
-              "DocumentMoniker": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\Services\\DbContextFactory.cs",
-              "RelativeDocumentMoniker": "REPORTES\\Services\\DbContextFactory.cs",
-              "ToolTip": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\Services\\DbContextFactory.cs",
-              "RelativeToolTip": "REPORTES\\Services\\DbContextFactory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-06T02:05:39.002Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
               "Title": "LoanCalculator.cs",
               "DocumentMoniker": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\Calculations\\LoanCalculator.cs",
               "RelativeDocumentMoniker": "REPORTES\\Calculations\\LoanCalculator.cs",
               "ToolTip": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\Calculations\\LoanCalculator.cs",
               "RelativeToolTip": "REPORTES\\Calculations\\LoanCalculator.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAwwFUAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAKQAAAAAAAAAAAAAwMgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-06T02:03:32.873Z"
+              "WhenOpened": "2026-03-06T02:03:32.873Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Model1.Context.cs",
-              "DocumentMoniker": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\Model1.Context.cs",
-              "RelativeDocumentMoniker": "REPORTES\\Model1.Context.cs",
-              "ToolTip": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\Model1.Context.cs",
-              "RelativeToolTip": "REPORTES\\Model1.Context.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAwwBEAAAAkAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "PrestamoService.cs",
+              "DocumentMoniker": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\Services\\PrestamoService.cs",
+              "RelativeDocumentMoniker": "REPORTES\\Services\\PrestamoService.cs",
+              "ToolTip": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\Services\\PrestamoService.cs",
+              "RelativeToolTip": "REPORTES\\Services\\PrestamoService.cs",
+              "ViewState": "AgIAALgAAAAAAAAAAAAAwNwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-06T01:40:07.14Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Pagos.cs",
-              "DocumentMoniker": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\Pagos.cs",
-              "RelativeDocumentMoniker": "REPORTES\\Pagos.cs",
-              "ToolTip": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\Pagos.cs",
-              "RelativeToolTip": "REPORTES\\Pagos.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-05T16:07:16.09Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Model1.edmx [Diagram1]",
-              "DocumentMoniker": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\Model1.edmx",
-              "RelativeDocumentMoniker": "REPORTES\\Model1.edmx",
-              "ToolTip": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\Model1.edmx [Diagram1]",
-              "RelativeToolTip": "REPORTES\\Model1.edmx [Diagram1]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
-              "WhenOpened": "2026-03-05T16:03:22.976Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "FrmReporte.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\FrmReporte.cs",
-              "RelativeDocumentMoniker": "REPORTES\\FrmReporte.cs",
-              "ToolTip": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\FrmReporte.cs [Design]",
-              "RelativeToolTip": "REPORTES\\FrmReporte.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-05T15:56:38.127Z"
+              "WhenOpened": "2026-03-06T02:10:17.835Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -6,7 +6,7 @@ namespace REPORTES.Services
 {
     public class PrestamoService
     {
-        private const decimal FondoBase = 5000000m;
+        private const decimal FondoBase = 10000000m;
 
         public decimal CalcularFondoActual()
         {
@@ -42,6 +42,7 @@ namespace REPORTES.Services
                 throw new Exception("No se puede prestar más de 4 veces el sueldo del cliente.");
 
             decimal fondoActual = CalcularFondoActual();
+
             if (monto > fondoActual)
                 throw new Exception("La entidad no tiene fondo suficiente para otorgar este préstamo.");
         }
@@ -55,7 +56,7 @@ namespace REPORTES.Services
                 ValidarSolicitudPrestamo(cliente, monto, meses);
 
                 decimal tasa = LoanCalculator.ObtenerTasaAnual(meses);
-                decimal interes = LoanCalculator.CalcularInteresSimple(monto, tasa);
+                decimal interes = LoanCalculator.CalcularInteresSimple(monto, tasa, meses);
                 decimal montoTotal = LoanCalculator.CalcularMontoTotal(monto, interes);
 
                 Prestamos nuevoPrestamo = new Prestamos
@@ -96,7 +97,15 @@ namespace REPORTES.Services
             }
         }
 
-        public void RegistrarPago(int prestamoId, decimal montoAbonado, bool pagoRealizado, int mesNumero)
+        public int ObtenerMesesPagados(int prestamoId)
+        {
+            using (var db = DbContextFactory.Create())
+            {
+                return db.Pagos.Count(p => p.PrestamoId == prestamoId);
+            }
+        }
+
+        public int ObtenerMesesRestantes(int prestamoId)
         {
             using (var db = DbContextFactory.Create())
             {
@@ -105,14 +114,60 @@ namespace REPORTES.Services
                 if (prestamo == null)
                     throw new Exception("Préstamo no encontrado.");
 
-                decimal montoAnterior = ObtenerMontoActual(prestamoId);
+                int pagados = db.Pagos.Count(p => p.PrestamoId == prestamoId);
+                int restantes = prestamo.Meses - pagados;
 
-                int meses = prestamo.Meses;
-                decimal tasaAnual = LoanCalculator.ObtenerTasaAnual(meses);
-                decimal cuota = LoanCalculator.CalcularCuotaMensual(montoAnterior, tasaAnual, meses);
+                if (restantes <= 0)
+                    restantes = 1;
+
+                return restantes;
+            }
+        }
+
+        public decimal ObtenerInteresesAcumulados(int prestamoId)
+        {
+            using (var db = DbContextFactory.Create())
+            {
+                decimal totalIntereses = db.Pagos
+                    .Where(p => p.PrestamoId == prestamoId && p.InteresPagado.HasValue)
+                    .Select(p => p.InteresPagado.Value)
+                    .DefaultIfEmpty(0m)
+                    .Sum();
+
+                return totalIntereses;
+            }
+        }
+
+        // Devuelve el detalle del pago sin guardarlo todavía
+        public LoanCalculator.PagoCalculado ObtenerDetallePago(int prestamoId, decimal abonoExtra = 0m)
+        {
+            decimal montoAnterior = ObtenerMontoActual(prestamoId);
+            int mesesRestantes = ObtenerMesesRestantes(prestamoId);
+            decimal interesesAcumulados = ObtenerInteresesAcumulados(prestamoId);
+
+            return LoanCalculator.CalcularPagoDelMes(
+                montoAnterior,
+                mesesRestantes,
+                interesesAcumulados,
+                abonoExtra
+            );
+        }
+
+        public void RegistrarPago(int prestamoId, decimal abonoExtra, bool pagoRealizado, int mesNumero)
+        {
+            using (var db = DbContextFactory.Create())
+            {
+                var prestamo = db.Prestamos.FirstOrDefault(p => p.Id == prestamoId);
+
+                if (prestamo == null)
+                    throw new Exception("Préstamo no encontrado.");
+
+                var detallePago = ObtenerDetallePago(prestamoId, abonoExtra);
 
                 if (!pagoRealizado)
                 {
+                    decimal montoMora = LoanCalculator.CalcularMora(detallePago.Cuota);
+
                     var moraExistente = db.Moras.FirstOrDefault(m => m.PrestamoId == prestamoId);
 
                     if (moraExistente == null)
@@ -122,6 +177,7 @@ namespace REPORTES.Services
                             PrestamoId = prestamoId,
                             Cantidad = 1
                         };
+
                         db.Moras.Add(nuevaMora);
                     }
                     else
@@ -132,9 +188,11 @@ namespace REPORTES.Services
                     db.SaveChanges();
 
                     var moraActualizada = db.Moras.FirstOrDefault(m => m.PrestamoId == prestamoId);
+
                     if (moraActualizada != null && (moraActualizada.Cantidad ?? 0) >= 3)
                     {
                         var cliente = db.Clientes.FirstOrDefault(c => c.Id == prestamo.ClienteId);
+
                         if (cliente != null)
                         {
                             cliente.EsMoroso = true;
@@ -145,19 +203,13 @@ namespace REPORTES.Services
                     return;
                 }
 
-                decimal interesPagado = Math.Round(montoAnterior * (tasaAnual / 12m), 2);
-                decimal nuevoMonto = Math.Round(montoAnterior - montoAbonado, 2);
-
-                if (nuevoMonto < 0)
-                    nuevoMonto = 0;
-
                 Pagos nuevoPago = new Pagos
                 {
                     PrestamoId = prestamoId,
-                    MontoAnterior = montoAnterior,
-                    InteresPagado = interesPagado,
-                    MontoAbonado = montoAbonado,
-                    NuevoMonto = nuevoMonto,
+                    MontoAnterior = detallePago.MontoAnterior,
+                    InteresPagado = detallePago.InteresAPagar,
+                    MontoAbonado = detallePago.CapitalPagado,
+                    NuevoMonto = detallePago.NuevoMontoAdeudado,
                     FechaPago = DateTime.Now
                 };
 
