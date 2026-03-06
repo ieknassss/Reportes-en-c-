@@ -62,6 +62,10 @@
     <Compile Include="Clientes.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Domain\Cliente.cs" />
+    <Compile Include="Domain\Mora.cs" />
+    <Compile Include="Domain\Pago.cs" />
+    <Compile Include="Domain\Prestamo.cs" />
     <Compile Include="DTOs\ReporteAmortizacionDto.cs" />
     <Compile Include="DTOs\ReporteClienteDto.cs" />
     <Compile Include="DTOs\ReporteFinancieroDto.cs" />

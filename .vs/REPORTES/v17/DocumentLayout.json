@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C9623BBD-FFB8-4EBB-8F8B-57C2FFBF5A69}|REPORTES\\REPORTES.csproj|c:\\users\\cs065\\documents\\reportes-en-c-\\reportes\\domain\\mora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C9623BBD-FFB8-4EBB-8F8B-57C2FFBF5A69}|REPORTES\\REPORTES.csproj|solutionrelative:reportes\\domain\\mora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C9623BBD-FFB8-4EBB-8F8B-57C2FFBF5A69}|REPORTES\\REPORTES.csproj|c:\\users\\cs065\\documents\\reportes-en-c-\\reportes\\domain\\pago.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C9623BBD-FFB8-4EBB-8F8B-57C2FFBF5A69}|REPORTES\\REPORTES.csproj|solutionrelative:reportes\\domain\\pago.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C9623BBD-FFB8-4EBB-8F8B-57C2FFBF5A69}|REPORTES\\REPORTES.csproj|c:\\users\\cs065\\documents\\reportes-en-c-\\reportes\\domain\\prestamo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C9623BBD-FFB8-4EBB-8F8B-57C2FFBF5A69}|REPORTES\\REPORTES.csproj|solutionrelative:reportes\\domain\\prestamo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C9623BBD-FFB8-4EBB-8F8B-57C2FFBF5A69}|REPORTES\\REPORTES.csproj|c:\\users\\cs065\\documents\\reportes-en-c-\\reportes\\domain\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C9623BBD-FFB8-4EBB-8F8B-57C2FFBF5A69}|REPORTES\\REPORTES.csproj|solutionrelative:reportes\\domain\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C9623BBD-FFB8-4EBB-8F8B-57C2FFBF5A69}|REPORTES\\REPORTES.csproj|c:\\users\\cs065\\documents\\reportes-en-c-\\reportes\\services\\reporteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C9623BBD-FFB8-4EBB-8F8B-57C2FFBF5A69}|REPORTES\\REPORTES.csproj|solutionrelative:reportes\\services\\reporteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -62,11 +78,63 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
+              "Title": "Mora.cs",
+              "DocumentMoniker": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\Domain\\Mora.cs",
+              "RelativeDocumentMoniker": "REPORTES\\Domain\\Mora.cs",
+              "ToolTip": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\Domain\\Mora.cs",
+              "RelativeToolTip": "REPORTES\\Domain\\Mora.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-06T12:37:18.605Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Pago.cs",
+              "DocumentMoniker": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\Domain\\Pago.cs",
+              "RelativeDocumentMoniker": "REPORTES\\Domain\\Pago.cs",
+              "ToolTip": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\Domain\\Pago.cs",
+              "RelativeToolTip": "REPORTES\\Domain\\Pago.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-06T12:36:59.034Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Prestamo.cs",
+              "DocumentMoniker": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\Domain\\Prestamo.cs",
+              "RelativeDocumentMoniker": "REPORTES\\Domain\\Prestamo.cs",
+              "ToolTip": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\Domain\\Prestamo.cs",
+              "RelativeToolTip": "REPORTES\\Domain\\Prestamo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-06T12:36:33.811Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Cliente.cs",
+              "DocumentMoniker": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\Domain\\Cliente.cs",
+              "RelativeDocumentMoniker": "REPORTES\\Domain\\Cliente.cs",
+              "ToolTip": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\Domain\\Cliente.cs",
+              "RelativeToolTip": "REPORTES\\Domain\\Cliente.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-06T12:20:15.79Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "ReporteFinancieroDto.cs",
               "DocumentMoniker": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\DTOs\\ReporteFinancieroDto.cs",
               "RelativeDocumentMoniker": "REPORTES\\DTOs\\ReporteFinancieroDto.cs",
@@ -78,7 +146,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "ReporteMoraDto.cs",
               "DocumentMoniker": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\DTOs\\ReporteMoraDto.cs",
               "RelativeDocumentMoniker": "REPORTES\\DTOs\\ReporteMoraDto.cs",
@@ -90,7 +158,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "ReporteMorosoDto.cs",
               "DocumentMoniker": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\DTOs\\ReporteMorosoDto.cs",
               "RelativeDocumentMoniker": "REPORTES\\DTOs\\ReporteMorosoDto.cs",
@@ -102,7 +170,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "ReporteAmortizacionDto.cs",
               "DocumentMoniker": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\DTOs\\ReporteAmortizacionDto.cs",
               "RelativeDocumentMoniker": "REPORTES\\DTOs\\ReporteAmortizacionDto.cs",
@@ -114,7 +182,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "ReporteService.cs",
               "DocumentMoniker": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\Services\\ReporteService.cs",
               "RelativeDocumentMoniker": "REPORTES\\Services\\ReporteService.cs",
@@ -127,7 +195,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "ReporteClienteDto.cs",
               "DocumentMoniker": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\DTOs\\ReporteClienteDto.cs",
               "RelativeDocumentMoniker": "REPORTES\\DTOs\\ReporteClienteDto.cs",
@@ -139,7 +207,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "PrestamoService.cs",
               "DocumentMoniker": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\Services\\PrestamoService.cs",
               "RelativeDocumentMoniker": "REPORTES\\Services\\PrestamoService.cs",
@@ -151,7 +219,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "DbContextFactory.cs",
               "DocumentMoniker": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\Services\\DbContextFactory.cs",
               "RelativeDocumentMoniker": "REPORTES\\Services\\DbContextFactory.cs",
@@ -163,7 +231,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
               "Title": "LoanCalculator.cs",
               "DocumentMoniker": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\Calculations\\LoanCalculator.cs",
               "RelativeDocumentMoniker": "REPORTES\\Calculations\\LoanCalculator.cs",
@@ -175,7 +243,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "Model1.Context.cs",
               "DocumentMoniker": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\Model1.Context.cs",
               "RelativeDocumentMoniker": "REPORTES\\Model1.Context.cs",
@@ -187,7 +255,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "Pagos.cs",
               "DocumentMoniker": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\Pagos.cs",
               "RelativeDocumentMoniker": "REPORTES\\Pagos.cs",
@@ -199,7 +267,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 15,
               "Title": "Model1.edmx [Diagram1]",
               "DocumentMoniker": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\Model1.edmx",
               "RelativeDocumentMoniker": "REPORTES\\Model1.edmx",
@@ -210,7 +278,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 16,
               "Title": "FrmReporte.cs [Design]",
               "DocumentMoniker": "C:\\Users\\cs065\\Documents\\Reportes-en-c-\\REPORTES\\FrmReporte.cs",
               "RelativeDocumentMoniker": "REPORTES\\FrmReporte.cs",
