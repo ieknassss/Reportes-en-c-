@@ -136,6 +136,9 @@
     <Compile Include="Servicios\DbContextFactory.cs" />
     <Compile Include="Servicios\PrestamoService.cs" />
     <Compile Include="Servicios\ReporteService.cs" />
+    <EmbeddedResource Include="Interfaces\FrmGestionPagos.resx">
+      <DependentUpon>FrmGestionPagos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\FrmMenuPrincipal.resx">
       <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
