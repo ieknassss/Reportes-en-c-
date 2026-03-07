@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace REPORTES
+namespace REPORTES.Interfaces
 {
-    public partial class FrmReporte : Form
+    public partial class FrmMenuPrincipal : Form
     {
-        public FrmReporte()
+        public FrmMenuPrincipal()
         {
             InitializeComponent();
         }
