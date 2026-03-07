@@ -16,5 +16,20 @@ namespace REPORTES.Interfaces
         {
             InitializeComponent();
         }
+
+        private void btnVerClientes_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Aquí se mostrarán los clientes registrados");
+        }
+
+        private void btnVerPrestamos_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Aquí se mostrarán los préstamos registrados");
+        }
+
+        private void btnVerPagos_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Aquí se mostrarán los pagos realizados");
+        }
     }
 }

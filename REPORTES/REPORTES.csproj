@@ -148,6 +148,9 @@
     <EmbeddedResource Include="Interfaces\FrmSolicitudPrestamo.resx">
       <DependentUpon>FrmSolicitudPrestamo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\FrmVisualizacionDatos.resx">
+      <DependentUpon>FrmVisualizacionDatos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
