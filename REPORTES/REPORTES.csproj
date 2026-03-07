@@ -71,11 +71,41 @@
     <Compile Include="DTOs\ReporteFinancieroDto.cs" />
     <Compile Include="DTOs\ReporteMoraDto.cs" />
     <Compile Include="DTOs\ReporteMorosoDto.cs" />
+    <Compile Include="Interfaces\FrmAcercaDe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\FrmAcercaDe.Designer.cs">
+      <DependentUpon>FrmAcercaDe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\FrmMenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Interfaces\FrmMenuPrincipal.Designer.cs">
       <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\FrmRegistroCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\FrmRegistroCliente.Designer.cs">
+      <DependentUpon>FrmRegistroCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\FrmSolicitudPrestamo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\FrmSolicitudPrestamo.Designer.cs">
+      <DependentUpon>FrmSolicitudPrestamo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\FrmGestionPagos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\FrmGestionPagos.Designer.cs">
+      <DependentUpon>FrmGestionPagos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\FrmVisualizacionDatos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\FrmVisualizacionDatos.Designer.cs">
+      <DependentUpon>FrmVisualizacionDatos.cs</DependentUpon>
     </Compile>
     <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>
@@ -108,6 +138,9 @@
     <Compile Include="Servicios\ReporteService.cs" />
     <EmbeddedResource Include="Interfaces\FrmMenuPrincipal.resx">
       <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\FrmRegistroCliente.resx">
+      <DependentUpon>FrmRegistroCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
