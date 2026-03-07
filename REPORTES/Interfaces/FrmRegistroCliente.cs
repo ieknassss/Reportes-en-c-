@@ -21,5 +21,31 @@ namespace REPORTES.Interfaces
         {
 
         }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if (txtNombre.Text == "" || txtCorreo.Text == "")
+            {
+                MessageBox.Show("Debe completar todo");
+                return;
+            }
+
+            MessageBox.Show("Cliente registrado correctamente");
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtNombre.Clear();
+            txtCorreo.Clear();
+            txtTelefono.Clear();
+            txtDireccion.Clear();
+            txtGarantia.Clear();
+            txtSueldo.Clear();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

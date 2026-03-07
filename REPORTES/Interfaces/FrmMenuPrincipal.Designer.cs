@@ -40,7 +40,13 @@
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verInformaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sistemaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tablaDeAmortizaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.informaciónDeClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.totalPrestadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.morasAcumuladasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientesMorososToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,7 +59,8 @@
             this.préstamosToolStripMenuItem,
             this.pagosToolStripMenuItem,
             this.consultasToolStripMenuItem,
-            this.sistemaToolStripMenuItem});
+            this.sistemaToolStripMenuItem,
+            this.sistemaToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(978, 33);
@@ -143,16 +150,58 @@
             // sistemaToolStripMenuItem
             // 
             this.sistemaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.salirToolStripMenuItem});
+            this.tablaDeAmortizaciónToolStripMenuItem,
+            this.informaciónDeClienteToolStripMenuItem,
+            this.totalPrestadoToolStripMenuItem,
+            this.morasAcumuladasToolStripMenuItem,
+            this.clientesMorososToolStripMenuItem});
             this.sistemaToolStripMenuItem.Name = "sistemaToolStripMenuItem";
-            this.sistemaToolStripMenuItem.Size = new System.Drawing.Size(90, 29);
-            this.sistemaToolStripMenuItem.Text = "Sistema";
+            this.sistemaToolStripMenuItem.Size = new System.Drawing.Size(98, 29);
+            this.sistemaToolStripMenuItem.Text = "Reportes";
             // 
-            // salirToolStripMenuItem
+            // sistemaToolStripMenuItem1
             // 
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.salirToolStripMenuItem.Text = "Salir";
+            this.sistemaToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.salirToolStripMenuItem1});
+            this.sistemaToolStripMenuItem1.Name = "sistemaToolStripMenuItem1";
+            this.sistemaToolStripMenuItem1.Size = new System.Drawing.Size(90, 29);
+            this.sistemaToolStripMenuItem1.Text = "Sistema";
+            // 
+            // salirToolStripMenuItem1
+            // 
+            this.salirToolStripMenuItem1.Name = "salirToolStripMenuItem1";
+            this.salirToolStripMenuItem1.Size = new System.Drawing.Size(270, 34);
+            this.salirToolStripMenuItem1.Text = "Salir";
+            // 
+            // tablaDeAmortizaciónToolStripMenuItem
+            // 
+            this.tablaDeAmortizaciónToolStripMenuItem.Name = "tablaDeAmortizaciónToolStripMenuItem";
+            this.tablaDeAmortizaciónToolStripMenuItem.Size = new System.Drawing.Size(290, 34);
+            this.tablaDeAmortizaciónToolStripMenuItem.Text = "Tabla de amortización";
+            // 
+            // informaciónDeClienteToolStripMenuItem
+            // 
+            this.informaciónDeClienteToolStripMenuItem.Name = "informaciónDeClienteToolStripMenuItem";
+            this.informaciónDeClienteToolStripMenuItem.Size = new System.Drawing.Size(290, 34);
+            this.informaciónDeClienteToolStripMenuItem.Text = "Información de cliente";
+            // 
+            // totalPrestadoToolStripMenuItem
+            // 
+            this.totalPrestadoToolStripMenuItem.Name = "totalPrestadoToolStripMenuItem";
+            this.totalPrestadoToolStripMenuItem.Size = new System.Drawing.Size(290, 34);
+            this.totalPrestadoToolStripMenuItem.Text = "Total prestado";
+            // 
+            // morasAcumuladasToolStripMenuItem
+            // 
+            this.morasAcumuladasToolStripMenuItem.Name = "morasAcumuladasToolStripMenuItem";
+            this.morasAcumuladasToolStripMenuItem.Size = new System.Drawing.Size(290, 34);
+            this.morasAcumuladasToolStripMenuItem.Text = "Moras acumuladas";
+            // 
+            // clientesMorososToolStripMenuItem
+            // 
+            this.clientesMorososToolStripMenuItem.Name = "clientesMorososToolStripMenuItem";
+            this.clientesMorososToolStripMenuItem.Size = new System.Drawing.Size(290, 34);
+            this.clientesMorososToolStripMenuItem.Text = "Clientes morosos";
             // 
             // FrmMenuPrincipal
             // 
@@ -190,6 +239,12 @@
         private System.Windows.Forms.ToolStripMenuItem consultasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verInformaciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sistemaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sistemaToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem tablaDeAmortizaciónToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem informaciónDeClienteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem totalPrestadoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem morasAcumuladasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clientesMorososToolStripMenuItem;
     }
 }

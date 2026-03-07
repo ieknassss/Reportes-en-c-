@@ -40,5 +40,10 @@ namespace REPORTES.Interfaces
             FrmVisualizacionDatos frm = new FrmVisualizacionDatos();
             frm.ShowDialog();
         }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
