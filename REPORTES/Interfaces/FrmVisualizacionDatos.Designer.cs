@@ -106,6 +106,7 @@
             this.Name = "FrmVisualizacionDatos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Visualización de Información";
+            this.Load += new System.EventHandler(this.FrmVisualizacionDatos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

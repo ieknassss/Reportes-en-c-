@@ -13,7 +13,7 @@ namespace REPORTES.Interfaces
 {
     public partial class FrmRegistroCliente : Form
     {
-        PrestamosDBEntities db = new PrestamosDBEntities();
+        PrestamosDBEntities db;
         public FrmRegistroCliente()
         {
             InitializeComponent();
@@ -28,7 +28,7 @@ namespace REPORTES.Interfaces
 
         private void FrmRegistroCliente_Load(object sender, EventArgs e)
         {
-
+            PrestamosDBEntities db;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)

@@ -71,17 +71,17 @@
     <Compile Include="DTOs\ReporteFinancieroDto.cs" />
     <Compile Include="DTOs\ReporteMoraDto.cs" />
     <Compile Include="DTOs\ReporteMorosoDto.cs" />
-    <Compile Include="Interfaces\FrmAcercaDe.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Interfaces\FrmAcercaDe.Designer.cs">
-      <DependentUpon>FrmAcercaDe.cs</DependentUpon>
-    </Compile>
     <Compile Include="Interfaces\FrmMenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Interfaces\FrmMenuPrincipal.Designer.cs">
       <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\FrmMoras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\FrmMoras.Designer.cs">
+      <DependentUpon>FrmMoras.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\FrmRegistroCliente.cs">
       <SubType>Form</SubType>
@@ -171,6 +171,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\FrmMenuPrincipal.resx">
       <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\FrmMoras.resx">
+      <DependentUpon>FrmMoras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\FrmRegistroCliente.resx">
       <DependentUpon>FrmRegistroCliente.cs</DependentUpon>

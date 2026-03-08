@@ -81,5 +81,21 @@ namespace REPORTES.Interfaces
             FrmClientesMorosos frm = new FrmClientesMorosos();
             frm.Show();
         }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void visualizacionDeMorasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmMoras frm = new FrmMoras();
+            frm.Show();
+        }
+
+        private void FrmMenuPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

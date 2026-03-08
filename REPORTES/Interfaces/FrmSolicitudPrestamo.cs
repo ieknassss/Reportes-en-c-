@@ -14,7 +14,7 @@ namespace REPORTES.Interfaces
 {
     public partial class FrmSolicitudPrestamo : Form
     {
-        PrestamosDBEntities db = new PrestamosDBEntities();
+        PrestamosDBEntities db;
         public FrmSolicitudPrestamo()
         {
             InitializeComponent();
@@ -106,7 +106,7 @@ namespace REPORTES.Interfaces
             cmbCliente.DataSource = db.Clientes.ToList();
             cmbCliente.DisplayMember = "NombreCompleto";
             cmbCliente.ValueMember = "Id";
-
+            db = new PrestamosDBEntities();
             CargarPrestamos();
         }
     }

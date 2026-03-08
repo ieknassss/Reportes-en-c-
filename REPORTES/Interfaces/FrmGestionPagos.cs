@@ -14,7 +14,7 @@ namespace REPORTES.Interfaces
 {
     public partial class FrmGestionPagos : Form
     {
-        PrestamosDBEntities db = new PrestamosDBEntities();
+        PrestamosDBEntities db;
         public FrmGestionPagos()
         {
             InitializeComponent();
@@ -99,8 +99,11 @@ namespace REPORTES.Interfaces
 
             cmbCliente.DisplayMember = "Cliente";
             cmbCliente.ValueMember = "Id";
+            db = new PrestamosDBEntities();
 
             CargarPagos();
+
+           
         }
 
         public void CargarPagos()
