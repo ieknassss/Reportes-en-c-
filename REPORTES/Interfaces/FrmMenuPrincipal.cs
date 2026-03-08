@@ -1,4 +1,5 @@
-﻿using System;
+﻿using REPORTES.Reportes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -44,6 +45,41 @@ namespace REPORTES.Interfaces
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void tablaDeAmortizaciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmTablaAmortizacion frm = new FrmTablaAmortizacion();
+            frm.Show();
+        }
+
+        private void informaciónDeClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmInformacionCliente frm = new FrmInformacionCliente();
+            frm.Show();
+        }
+
+        private void salirToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void totalPrestadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmTotalPrestado frm = new FrmTotalPrestado();
+            frm.Show();
+        }
+
+        private void morasAcumuladasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmMorasAcumuladas frm = new FrmMorasAcumuladas();
+            frm.Show();
+        }
+
+        private void clientesMorososToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmClientesMorosos frm = new FrmClientesMorosos();
+            frm.Show();
         }
     }
 }

@@ -12,10 +12,18 @@ namespace REPORTES.Interfaces
 {
     public partial class FrmRegistroCliente : Form
     {
+        PrestamosDBEntities db = new PrestamosDBEntities();
         public FrmRegistroCliente()
         {
             InitializeComponent();
+            CargarClientes();
         }
+        public void CargarClientes()
+        {
+            dgvClientes.DataSource = db.Clientes.ToList();
+        }
+
+
 
         private void FrmRegistroCliente_Load(object sender, EventArgs e)
         {

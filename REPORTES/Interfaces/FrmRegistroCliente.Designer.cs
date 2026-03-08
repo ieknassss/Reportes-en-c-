@@ -46,6 +46,7 @@
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -164,7 +165,7 @@
             // btnGuardar
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.LightGreen;
-            this.btnGuardar.Location = new System.Drawing.Point(47, 394);
+            this.btnGuardar.Location = new System.Drawing.Point(45, 396);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(556, 38);
             this.btnGuardar.TabIndex = 13;
@@ -176,7 +177,7 @@
             // 
             this.btnLimpiar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.BackgroundImage")));
             this.btnLimpiar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLimpiar.Location = new System.Drawing.Point(607, 388);
+            this.btnLimpiar.Location = new System.Drawing.Point(607, 396);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(59, 44);
             this.btnLimpiar.TabIndex = 14;
@@ -198,19 +199,30 @@
             // dgvClientes
             // 
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientes.Location = new System.Drawing.Point(17, 457);
+            this.dgvClientes.Location = new System.Drawing.Point(17, 446);
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.RowHeadersWidth = 62;
             this.dgvClientes.RowTemplate.Height = 28;
-            this.dgvClientes.Size = new System.Drawing.Size(649, 214);
+            this.dgvClientes.Size = new System.Drawing.Size(649, 212);
             this.dgvClientes.TabIndex = 16;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(500, 113);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(120, 24);
+            this.checkBox1.TabIndex = 17;
+            this.checkBox1.Text = "Es Moroso?";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // FrmRegistroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(678, 683);
+            this.ClientSize = new System.Drawing.Size(678, 670);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.dgvClientes);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnLimpiar);
@@ -259,5 +271,6 @@
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.DataGridView dgvClientes;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
