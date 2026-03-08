@@ -47,6 +47,8 @@
             this.btnCalcularPago = new System.Windows.Forms.Button();
             this.btnRegistrarPago = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -215,12 +217,23 @@
             this.btnLimpiar.UseVisualStyleBackColor = true;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(13, 588);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.RowTemplate.Height = 28;
+            this.dataGridView1.Size = new System.Drawing.Size(684, 168);
+            this.dataGridView1.TabIndex = 18;
+            // 
             // FrmGestionPagos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(728, 594);
+            this.ClientSize = new System.Drawing.Size(728, 768);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnRegistrarPago);
             this.Controls.Add(this.btnCalcularPago);
@@ -242,6 +255,8 @@
             this.Name = "FrmGestionPagos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestión de Pagos";
+            this.Load += new System.EventHandler(this.FrmGestionPagos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -267,5 +282,6 @@
         private System.Windows.Forms.Button btnCalcularPago;
         private System.Windows.Forms.Button btnRegistrarPago;
         private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

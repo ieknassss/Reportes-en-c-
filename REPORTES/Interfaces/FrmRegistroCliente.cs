@@ -1,4 +1,5 @@
-﻿using System;
+﻿using REPORTES.Domain;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -38,7 +39,24 @@ namespace REPORTES.Interfaces
                 return;
             }
 
+            Clientes c = new Clientes();
+
+            c.NombreCompleto = txtNombre.Text;
+            c.Correo = txtCorreo.Text;
+            c.Telefono = txtTelefono.Text;
+            c.Direccion = txtDireccion.Text;
+            c.Garantia = txtGarantia.Text;
+            c.Sueldo = Convert.ToDecimal(txtSueldo.Text);
+            c.EsMoroso = checkBox1.Checked;
+
+            db.Clientes.Add(c);
+            db.SaveChanges();
+
             MessageBox.Show("Cliente registrado correctamente");
+
+            CargarClientes();
+
+            
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)

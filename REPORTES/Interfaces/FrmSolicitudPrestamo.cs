@@ -1,4 +1,5 @@
-﻿using System;
+﻿using REPORTES.Domain;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,11 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using REPORTES.Calculations;
 
 namespace REPORTES.Interfaces
 {
     public partial class FrmSolicitudPrestamo : Form
     {
+        PrestamosDBEntities db = new PrestamosDBEntities();
         public FrmSolicitudPrestamo()
         {
             InitializeComponent();
@@ -19,27 +22,22 @@ namespace REPORTES.Interfaces
 
         private void btnCalcular_Click(object sender, EventArgs e)
         {
-            double monto = Convert.ToDouble(txtMonto.Text);
+            decimal monto = Convert.ToDecimal(txtMonto.Text);
             int meses = Convert.ToInt32(txtMeses.Text);
 
-            double tasa = 0;
+            decimal tasaAnual = LoanCalculator.ObtenerTasaAnual(meses);
 
-            if (meses <= 12)
-                tasa = 13.25;
-            else if (meses <= 24)
-                tasa = 15;
-            else
-                tasa = 30;
+            decimal interes = LoanCalculator.CalcularInteresSimple(monto, tasaAnual, meses);
 
-            double interes = monto * (tasa / 100);
-            double total = monto + interes;
-            double cuota = total / meses;
+            decimal montoTotal = LoanCalculator.CalcularMontoTotal(monto, interes);
 
-            txtInteres.Text = interes.ToString("N2");
-            txtTotal.Text = total.ToString("N2");
-            txtCuota.Text = cuota.ToString("N2");
+            decimal cuota = LoanCalculator.CalcularCuotaMensual(monto, tasaAnual, meses);
 
-           
+            txtInteres.Text = interes.ToString();
+            txtTotal.Text = montoTotal.ToString();
+            txtCuota.Text = cuota.ToString();
+
+
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -51,6 +49,21 @@ namespace REPORTES.Interfaces
             txtCuota.Clear();
         }
 
+        public void CargarPrestamos()
+        {
+            dataGridView1.DataSource = db.Prestamos
+                .Select(p => new
+                {
+                    p.Id,
+                    Cliente = p.Clientes.NombreCompleto,
+                    p.Monto,
+                    p.Meses,
+                    p.InteresGenerado,
+                    p.MontoTotal,
+                    p.FechaPrestamo
+                }).ToList();
+        }
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (cmbCliente.Text == "" || txtMonto.Text == "" || txtMeses.Text == "")
@@ -59,7 +72,20 @@ namespace REPORTES.Interfaces
                 return;
             }
 
-            MessageBox.Show("Préstamo registrado correctamente", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Prestamos  p = new Prestamos();
+
+            p.ClienteId = (int)cmbCliente.SelectedValue;
+            p.Monto = Convert.ToDecimal(txtMonto.Text);
+            p.Meses = Convert.ToInt32(txtMeses.Text);
+            p.InteresGenerado = Convert.ToDecimal(txtInteres.Text);
+            p.MontoTotal = Convert.ToDecimal(txtTotal.Text);
+            p.FechaPrestamo = DateTime.Now;
+
+            db.Prestamos.Add(p);
+            db.SaveChanges();
+            CargarPrestamos();
+
+            MessageBox.Show("Prestamo guardado correctamente");
 
             LimpiarCampos();
      
@@ -73,6 +99,15 @@ namespace REPORTES.Interfaces
             txtInteres.Clear();
             txtTotal.Clear();
             txtCuota.Clear();
+        }
+
+        private void FrmSolicitudPrestamo_Load(object sender, EventArgs e)
+        {
+            cmbCliente.DataSource = db.Clientes.ToList();
+            cmbCliente.DisplayMember = "NombreCompleto";
+            cmbCliente.ValueMember = "Id";
+
+            CargarPrestamos();
         }
     }
 }

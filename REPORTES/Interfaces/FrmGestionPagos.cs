@@ -1,4 +1,6 @@
-﻿using System;
+﻿using REPORTES.Calculations;
+using REPORTES.Domain;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,7 @@ namespace REPORTES.Interfaces
 {
     public partial class FrmGestionPagos : Form
     {
+        PrestamosDBEntities db = new PrestamosDBEntities();
         public FrmGestionPagos()
         {
             InitializeComponent();
@@ -19,15 +22,23 @@ namespace REPORTES.Interfaces
 
         private void btnCalcularPago_Click(object sender, EventArgs e)
         {
-            double montoAnterior = Convert.ToDouble(txtMontoAnterior.Text);
-            double cuota = Convert.ToDouble(txtCuota.Text);
+            decimal montoAnterior = Convert.ToDecimal(txtMontoAnterior.Text);
+            int mesesRestantes = Convert.ToInt32(txtMesesRestantes.Text);
+            decimal interesesPrevios = Convert.ToDecimal(txtTotalIntereses.Text);
 
-            double interes = montoAnterior * 0.02; 
+            decimal abonoExtra = Convert.ToDecimal(txtCuota.Text);
 
-            double nuevoMonto = montoAnterior - cuota;
+            var pago = LoanCalculator.CalcularPagoDelMes(
+                montoAnterior,
+                mesesRestantes,
+                interesesPrevios,
+                abonoExtra
+            );
 
-            txtInteres.Text = interes.ToString("N2");
-            txtNuevoMonto.Text = nuevoMonto.ToString("N2");
+            txtInteres.Text = pago.InteresAPagar.ToString();
+            txtNuevoMonto.Text = pago.NuevoMontoAdeudado.ToString();
+            txtMesesRestantes.Text = pago.MesesRestantes.ToString();
+            txtTotalIntereses.Text = pago.TotalInteresesAcumulados.ToString();
         }
 
         private void btnRegistrarPago_Click(object sender, EventArgs e)
@@ -38,7 +49,17 @@ namespace REPORTES.Interfaces
                 return;
             }
 
-            MessageBox.Show("Pago registrado correctamente");
+            Pagos pago = new Pagos();
+
+            pago.PrestamoId = (int)cmbCliente.SelectedValue;
+            pago.MontoAnterior = Convert.ToDecimal(txtMontoAnterior.Text);
+            pago.InteresPagado = Convert.ToDecimal(txtInteres.Text);
+            pago.MontoAbonado = Convert.ToDecimal(txtCuota.Text);
+            pago.NuevoMonto = Convert.ToDecimal(txtNuevoMonto.Text);
+            pago.FechaPago = DateTime.Now;
+
+            db.Pagos.Add(pago);
+            db.SaveChanges();
 
             LimpiarCampos();
         }
@@ -66,5 +87,35 @@ namespace REPORTES.Interfaces
             txtTotalIntereses.Clear();
         
     }
+
+        private void FrmGestionPagos_Load(object sender, EventArgs e)
+        {
+            cmbCliente.DataSource = db.Prestamos
+        .Select(p => new
+        {
+            p.Id,
+            Cliente = p.Clientes.NombreCompleto
+        }).ToList();
+
+            cmbCliente.DisplayMember = "Cliente";
+            cmbCliente.ValueMember = "Id";
+
+            CargarPagos();
+        }
+
+        public void CargarPagos()
+        {
+            dataGridView1.DataSource = db.Pagos
+                .Select(p => new
+                {
+                    p.Id,
+                    p.PrestamoId,
+                    p.MontoAnterior,
+                    p.InteresPagado,
+                    p.MontoAbonado,
+                    p.NuevoMonto,
+                    p.FechaPago
+                }).ToList();
+        }
     }
 }
