@@ -1,6 +1,7 @@
-﻿using System;
+﻿using REPORTES.Calculations;
+using System;
 using System.Linq;
-using REPORTES.Calculations;
+using System.Collections.Generic;
 
 namespace REPORTES.Services
 {
@@ -8,6 +9,9 @@ namespace REPORTES.Services
     {
         private const decimal FondoBase = 10000000m;
 
+        // ==============================
+        // FONDO DISPONIBLE
+        // ==============================
         public decimal CalcularFondoActual()
         {
             using (var db = DbContextFactory.Create())
@@ -21,6 +25,9 @@ namespace REPORTES.Services
             }
         }
 
+        // ==============================
+        // VALIDACIONES
+        // ==============================
         public void ValidarSolicitudPrestamo(Clientes cliente, decimal monto, int meses)
         {
             if (cliente == null)
@@ -44,9 +51,12 @@ namespace REPORTES.Services
             decimal fondoActual = CalcularFondoActual();
 
             if (monto > fondoActual)
-                throw new Exception("La entidad no tiene fondo suficiente para otorgar este préstamo.");
+                throw new Exception("La entidad no tiene fondo suficiente.");
         }
 
+        // ==============================
+        // CREAR PRÉSTAMO
+        // ==============================
         public Prestamos CrearPrestamo(int clienteId, decimal monto, int meses)
         {
             using (var db = DbContextFactory.Create())
@@ -76,6 +86,60 @@ namespace REPORTES.Services
             }
         }
 
+        // ==============================
+        // 🔥 AMORTIZACIÓN PERSONALIZADA
+        // ==============================
+        public List<LoanCalculator.AmortizacionItem> ObtenerTablaAmortizacion(int prestamoId)
+        {
+            using (var db = DbContextFactory.Create())
+            {
+                var prestamo = db.Prestamos.FirstOrDefault(p => p.Id == prestamoId);
+
+                if (prestamo == null)
+                    throw new Exception("Préstamo no encontrado.");
+
+                var cliente = db.Clientes.FirstOrDefault(c => c.Id == prestamo.ClienteId);
+
+                if (cliente == null)
+                    throw new Exception("Cliente no encontrado.");
+
+                // 🔥 TASA PERSONALIZADA
+                decimal tasa = CalcularTasaPersonalizada(cliente, prestamo.Meses);
+
+                return LoanCalculator.GenerarTablaAmortizacion(
+                    prestamo.Monto,
+                    prestamo.Meses,
+                    tasa
+                );
+            }
+        }
+
+        // ==============================
+        // 🔥 TASA PERSONALIZADA (ARREGLADA)
+        // ==============================
+        private decimal CalcularTasaPersonalizada(Clientes cliente, int meses)
+        {
+            decimal tasaBase = 0.10m; // 10%
+
+            // ✅ FIX del bool?
+            if (cliente.EsMoroso == true)
+                tasaBase += 0.05m;
+
+            if (cliente.Sueldo < 20000)
+                tasaBase += 0.03m;
+
+            if (cliente.Sueldo > 50000)
+                tasaBase -= 0.02m;
+
+            if (meses > 12)
+                tasaBase += 0.02m;
+
+            return tasaBase;
+        }
+
+        // ==============================
+        // MONTO ACTUAL
+        // ==============================
         public decimal ObtenerMontoActual(int prestamoId)
         {
             using (var db = DbContextFactory.Create())
@@ -93,10 +157,13 @@ namespace REPORTES.Services
                 if (prestamo == null)
                     throw new Exception("Préstamo no encontrado.");
 
-                return prestamo.MontoTotal ?? 0m;
+                return prestamo.Monto;
             }
         }
 
+        // ==============================
+        // MESES
+        // ==============================
         public int ObtenerMesesPagados(int prestamoId)
         {
             using (var db = DbContextFactory.Create())
@@ -117,28 +184,28 @@ namespace REPORTES.Services
                 int pagados = db.Pagos.Count(p => p.PrestamoId == prestamoId);
                 int restantes = prestamo.Meses - pagados;
 
-                if (restantes <= 0)
-                    restantes = 1;
-
-                return restantes;
+                return restantes <= 0 ? 1 : restantes;
             }
         }
 
+        // ==============================
+        // INTERESES
+        // ==============================
         public decimal ObtenerInteresesAcumulados(int prestamoId)
         {
             using (var db = DbContextFactory.Create())
             {
-                decimal totalIntereses = db.Pagos
+                return db.Pagos
                     .Where(p => p.PrestamoId == prestamoId && p.InteresPagado.HasValue)
                     .Select(p => p.InteresPagado.Value)
                     .DefaultIfEmpty(0m)
                     .Sum();
-
-                return totalIntereses;
             }
         }
 
-        // Devuelve el detalle del pago sin guardarlo todavía
+        // ==============================
+        // DETALLE DE PAGO
+        // ==============================
         public LoanCalculator.PagoCalculado ObtenerDetallePago(int prestamoId, decimal abonoExtra = 0m)
         {
             decimal montoAnterior = ObtenerMontoActual(prestamoId);
@@ -153,6 +220,9 @@ namespace REPORTES.Services
             );
         }
 
+        // ==============================
+        // REGISTRAR PAGO
+        // ==============================
         public void RegistrarPago(int prestamoId, decimal abonoExtra, bool pagoRealizado, int mesNumero)
         {
             using (var db = DbContextFactory.Create())
@@ -166,30 +236,26 @@ namespace REPORTES.Services
 
                 if (!pagoRealizado)
                 {
-                    decimal montoMora = LoanCalculator.CalcularMora(detallePago.Cuota);
+                    var mora = db.Moras.FirstOrDefault(m => m.PrestamoId == prestamoId);
 
-                    var moraExistente = db.Moras.FirstOrDefault(m => m.PrestamoId == prestamoId);
-
-                    if (moraExistente == null)
+                    if (mora == null)
                     {
-                        Moras nuevaMora = new Moras
+                        db.Moras.Add(new Moras
                         {
                             PrestamoId = prestamoId,
                             Cantidad = 1
-                        };
-
-                        db.Moras.Add(nuevaMora);
+                        });
                     }
                     else
                     {
-                        moraExistente.Cantidad = (moraExistente.Cantidad ?? 0) + 1;
+                        mora.Cantidad = (mora.Cantidad ?? 0) + 1;
                     }
 
                     db.SaveChanges();
 
-                    var moraActualizada = db.Moras.FirstOrDefault(m => m.PrestamoId == prestamoId);
+                    var moraActual = db.Moras.FirstOrDefault(m => m.PrestamoId == prestamoId);
 
-                    if (moraActualizada != null && (moraActualizada.Cantidad ?? 0) >= 3)
+                    if ((moraActual?.Cantidad ?? 0) >= 3)
                     {
                         var cliente = db.Clientes.FirstOrDefault(c => c.Id == prestamo.ClienteId);
 
@@ -203,7 +269,7 @@ namespace REPORTES.Services
                     return;
                 }
 
-                Pagos nuevoPago = new Pagos
+                db.Pagos.Add(new Pagos
                 {
                     PrestamoId = prestamoId,
                     MontoAnterior = detallePago.MontoAnterior,
@@ -211,9 +277,8 @@ namespace REPORTES.Services
                     MontoAbonado = detallePago.CapitalPagado,
                     NuevoMonto = detallePago.NuevoMontoAdeudado,
                     FechaPago = DateTime.Now
-                };
+                });
 
-                db.Pagos.Add(nuevoPago);
                 db.SaveChanges();
             }
         }

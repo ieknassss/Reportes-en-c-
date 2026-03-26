@@ -76,6 +76,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administradores.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Calculos\LoanCalculator.cs" />
     <Compile Include="Clientes.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -120,41 +123,65 @@
     <Compile Include="DTOs\ReporteFinancieroDto.cs" />
     <Compile Include="DTOs\ReporteMoraDto.cs" />
     <Compile Include="DTOs\ReporteMorosoDto.cs" />
-    <Compile Include="Interfaces\FrmMenuPrincipal.cs">
+    <Compile Include="Interfaces Adm\FrmFormularioDeAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\FrmMenuPrincipal.Designer.cs">
+    <Compile Include="Interfaces Adm\FrmFormularioDeAdmin.Designer.cs">
+      <DependentUpon>FrmFormularioDeAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces Adm\FrmMenuCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces Adm\FrmMenuCliente.Designer.cs">
+      <DependentUpon>FrmMenuCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces Adm\FrmMenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces Adm\FrmMenuPrincipal.Designer.cs">
       <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\FrmMoras.cs">
+    <Compile Include="Interfaces Adm\FrmMoras.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\FrmMoras.Designer.cs">
+    <Compile Include="Interfaces Adm\FrmMoras.Designer.cs">
       <DependentUpon>FrmMoras.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\FrmRegistroCliente.cs">
+    <Compile Include="Interfaces Adm\FrmRegistroAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\FrmRegistroCliente.Designer.cs">
+    <Compile Include="Interfaces Adm\FrmRegistroAdmin.Designer.cs">
+      <DependentUpon>FrmRegistroAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces Adm\FrmRegistroCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces Adm\FrmRegistroCliente.Designer.cs">
       <DependentUpon>FrmRegistroCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\FrmSolicitudPrestamo.cs">
+    <Compile Include="Interfaces Adm\FrmSolicitudPrestamo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\FrmSolicitudPrestamo.Designer.cs">
+    <Compile Include="Interfaces Adm\FrmSolicitudPrestamo.Designer.cs">
       <DependentUpon>FrmSolicitudPrestamo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\FrmGestionPagos.cs">
+    <Compile Include="Interfaces Adm\FrmGestionPagos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\FrmGestionPagos.Designer.cs">
+    <Compile Include="Interfaces Adm\FrmGestionPagos.Designer.cs">
       <DependentUpon>FrmGestionPagos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\FrmVisualizacionDatos.cs">
+    <Compile Include="Interfaces Adm\FrmVisualizacionDatos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\FrmVisualizacionDatos.Designer.cs">
+    <Compile Include="Interfaces Adm\FrmVisualizacionDatos.Designer.cs">
       <DependentUpon>FrmVisualizacionDatos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces Adm\log.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces Adm\log.Designer.cs">
+      <DependentUpon>log.cs</DependentUpon>
     </Compile>
     <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>
@@ -216,23 +243,32 @@
     <Compile Include="Servicios\PrestamoService.cs" />
     <Compile Include="Servicios\ReporteService.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <EmbeddedResource Include="Interfaces\FrmGestionPagos.resx">
+    <EmbeddedResource Include="Interfaces Adm\FrmFormularioDeAdmin.resx">
+      <DependentUpon>FrmFormularioDeAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces Adm\FrmGestionPagos.resx">
       <DependentUpon>FrmGestionPagos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\FrmMenuPrincipal.resx">
+    <EmbeddedResource Include="Interfaces Adm\FrmMenuPrincipal.resx">
       <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\FrmMoras.resx">
+    <EmbeddedResource Include="Interfaces Adm\FrmMoras.resx">
       <DependentUpon>FrmMoras.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\FrmRegistroCliente.resx">
+    <EmbeddedResource Include="Interfaces Adm\FrmRegistroAdmin.resx">
+      <DependentUpon>FrmRegistroAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces Adm\FrmRegistroCliente.resx">
       <DependentUpon>FrmRegistroCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\FrmSolicitudPrestamo.resx">
+    <EmbeddedResource Include="Interfaces Adm\FrmSolicitudPrestamo.resx">
       <DependentUpon>FrmSolicitudPrestamo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\FrmVisualizacionDatos.resx">
+    <EmbeddedResource Include="Interfaces Adm\FrmVisualizacionDatos.resx">
       <DependentUpon>FrmVisualizacionDatos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces Adm\log.resx">
+      <DependentUpon>log.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -255,9 +291,9 @@
     <EmbeddedResource Include="Reportes\FrmTablaAmortizacion.resx">
       <DependentUpon>FrmTablaAmortizacion.cs</DependentUpon>
     </EmbeddedResource>
-    <Content Include="Reportes\ReporteAmortizacion.rdlc">
+    <EmbeddedResource Include="Reportes\ReporteAmortizacion.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    </EmbeddedResource>
     <Content Include="Reportes\ReporteCliente.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

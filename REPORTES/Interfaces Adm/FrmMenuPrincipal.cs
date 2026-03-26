@@ -97,5 +97,11 @@ namespace REPORTES.Interfaces
         {
 
         }
+
+        private void adminsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmRegistroAdmin frm = new FrmRegistroAdmin();
+            frm.Show();
+        }
     }
 }

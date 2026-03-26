@@ -29,5 +29,6 @@ namespace REPORTES
         public virtual DbSet<Moras> Moras { get; set; }
         public virtual DbSet<Pagos> Pagos { get; set; }
         public virtual DbSet<Prestamos> Prestamos { get; set; }
+        public virtual DbSet<Administradores> Administradores { get; set; }
     }
 }

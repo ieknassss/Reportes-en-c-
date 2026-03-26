@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using REPORTES.Interfaces;
+using REPORTES.Reportes;
 
 namespace REPORTES
 {
@@ -18,7 +19,7 @@ namespace REPORTES
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmMenuPrincipal());
+            Application.Run(new FrmTablaAmortizacion());
         }
     }
 }
