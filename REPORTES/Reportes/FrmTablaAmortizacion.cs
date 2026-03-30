@@ -38,9 +38,7 @@ namespace REPORTES.Reportes
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Funciona");
-
+        { 
             if (!int.TryParse(txtPrestamo.Text, out int prestamoId))
             {
                 MessageBox.Show("Ingrese un ID válido");

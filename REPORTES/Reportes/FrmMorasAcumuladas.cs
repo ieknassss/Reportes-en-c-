@@ -43,5 +43,31 @@ namespace REPORTES.Reportes
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (!int.TryParse(txtPrestamo.Text, out int prestamoId))
+            {
+                MessageBox.Show("Ingrese un ID válido");
+                return;
+            }
+
+            var service = new ReporteService();
+            var datos = service.ObtenerMorasPorCliente(prestamoId);
+
+            if (datos == null || !datos.Any())
+            {
+                MessageBox.Show("No se encontraron moras para este cliente");
+                return;
+            }
+
+            reportViewer1.Reset();
+            reportViewer1.LocalReport.ReportPath = "Reportes/ReporteMoras.rdlc";
+            reportViewer1.LocalReport.DataSources.Clear();
+            reportViewer1.LocalReport.DataSources.Add(
+                new ReportDataSource("Moras", datos)
+            );
+            reportViewer1.RefreshReport();
+        }
     }
 }

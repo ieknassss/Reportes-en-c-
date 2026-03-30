@@ -1,12 +1,15 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using REPORTES.Calculations;
 using REPORTES.DTOs;
+using REPORTES.Calculations;
 
 namespace REPORTES.Services
 {
     public class ReporteService
     {
+        // ======================================
+        // Tabla de amortización
+        // ======================================
         public List<ReporteAmortizacionDto> ObtenerTablaAmortizacion(decimal monto, int meses)
         {
             return LoanCalculator.GenerarTablaAmortizacion(monto, meses)
@@ -17,88 +20,102 @@ namespace REPORTES.Services
                     Interes = x.Interes,
                     Capital = x.Capital,
                     Saldo = x.Saldo
-                })
-                .ToList();
+                }).ToList();
         }
 
+        // ======================================
+        // Detalle de un cliente
+        // ======================================
         public ReporteClienteDto ObtenerDetalleCliente(int clienteId)
         {
             using (var db = DbContextFactory.Create())
             {
-                var data = (from c in db.Clientes
-                            join p in db.Prestamos on c.Id equals p.ClienteId
-                            where c.Id == clienteId
-                            select new ReporteClienteDto
-                            {
-                                ClienteId = c.Id,
-                                NombreCompleto = c.NombreCompleto,
-                                Correo = c.Correo,
-                                Telefono = c.Telefono,
-                                Direccion = c.Direccion,
-                                Garantia = c.Garantia,
-                                Sueldo = c.Sueldo,
-                                EsMoroso = c.EsMoroso ?? false,
-                                MontoPrestado = p.Monto,
-                                InteresGenerado = p.InteresGenerado ?? 0m,
-                                MontoTotal = p.MontoTotal ?? 0m,
-                                Meses = p.Meses
-                            }).FirstOrDefault();
-
-                return data;
+                return (from c in db.Clientes
+                        join p in db.Prestamos on c.Id equals p.ClienteId
+                        where c.Id == clienteId
+                        select new ReporteClienteDto
+                        {
+                            ClienteId = c.Id,
+                            NombreCompleto = c.NombreCompleto,
+                            Correo = c.Correo,
+                            Telefono = c.Telefono,
+                            Direccion = c.Direccion,
+                            Garantia = c.Garantia,
+                            Sueldo = c.Sueldo,
+                            EsMoroso = c.EsMoroso ?? false,
+                            MontoPrestado = p.Monto,
+                            InteresGenerado = p.InteresGenerado ?? 0m,
+                            MontoTotal = p.MontoTotal ?? 0m,
+                            Meses = p.Meses
+                        }).FirstOrDefault();
             }
         }
 
-        public ReporteFinancieroDto ObtenerResumenFinanciero()
+        // ======================================
+        // Resumen financiero (con filtro opcional)
+        // ======================================
+        public ReporteFinancieroDto ObtenerResumenFinanciero(int? clienteId = null)
         {
             using (var db = DbContextFactory.Create())
             {
+                var prestamos = db.Prestamos.AsQueryable();
+                if (clienteId.HasValue)
+                    prestamos = prestamos.Where(p => p.ClienteId == clienteId.Value);
+
                 return new ReporteFinancieroDto
                 {
-                    TotalPrestado = db.Prestamos
-                        .Select(p => p.Monto)
-                        .DefaultIfEmpty(0m)
-                        .Sum(),
-
-                    TotalGanancia = db.Prestamos
-                        .Where(p => p.InteresGenerado != null)
-                        .Select(p => p.InteresGenerado.Value)
-                        .DefaultIfEmpty(0m)
-                        .Sum()
+                    TotalPrestado = prestamos.Select(p => p.Monto).DefaultIfEmpty(0m).Sum(),
+                    TotalGanancia = prestamos.Where(p => p.InteresGenerado != null)
+                                             .Select(p => p.InteresGenerado.Value)
+                                             .DefaultIfEmpty(0m)
+                                             .Sum()
                 };
             }
         }
 
-        public List<ReporteMoraDto> ObtenerMorasPorCliente()
+        // ======================================
+        // Moras acumuladas (con filtro opcional)
+        // ======================================
+        public List<ReporteMoraDto> ObtenerMorasPorCliente(int? clienteId = null)
         {
             using (var db = DbContextFactory.Create())
             {
-                var consulta = from c in db.Clientes
-                               join p in db.Prestamos on c.Id equals p.ClienteId
-                               join m in db.Moras on p.Id equals m.PrestamoId
-                               select new ReporteMoraDto
-                               {
-                                   Cliente = c.NombreCompleto,
-                                   CantidadMoras = m.Cantidad ?? 0
-                               };
+                var query = from c in db.Clientes
+                            join p in db.Prestamos on c.Id equals p.ClienteId
+                            join m in db.Moras on p.Id equals m.PrestamoId
+                            select new ReporteMoraDto
+                            {
+                                ClienteId = c.Id,
+                                Cliente = c.NombreCompleto,
+                                CantidadMoras = m.Cantidad ?? 0
+                            };
 
-                return consulta.ToList();
+                if (clienteId.HasValue)
+                    query = query.Where(q => q.ClienteId == clienteId.Value);
+
+                return query.ToList();
             }
         }
 
-        public List<ReporteMorosoDto> ObtenerClientesMorosos()
+        // ======================================
+        // Clientes morosos (con filtro opcional)
+        // ======================================
+        public List<ReporteMorosoDto> ObtenerClientesMorosos(int? clienteId = null)
         {
             using (var db = DbContextFactory.Create())
             {
-                return db.Clientes
-                    .Where(c => c.EsMoroso == true)
-                    .Select(c => new ReporteMorosoDto
-                    {
-                        ClienteId = c.Id,
-                        NombreCompleto = c.NombreCompleto,
-                        Correo = c.Correo,
-                        Telefono = c.Telefono
-                    })
-                    .ToList();
+                var query = db.Clientes.Where(c => c.EsMoroso == true);
+
+                if (clienteId.HasValue)
+                    query = query.Where(c => c.Id == clienteId.Value);
+
+                return query.Select(c => new ReporteMorosoDto
+                {
+                    ClienteId = c.Id,
+                    NombreCompleto = c.NombreCompleto,
+                    Correo = c.Correo,
+                    Telefono = c.Telefono
+                }).ToList();
             }
         }
     }

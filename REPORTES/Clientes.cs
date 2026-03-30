@@ -28,6 +28,8 @@ namespace REPORTES
         public string Garantia { get; set; }
         public decimal Sueldo { get; set; }
         public Nullable<bool> EsMoroso { get; set; }
+        public string Usuario { get; set; }
+        public string Clave { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Prestamos> Prestamos { get; set; }

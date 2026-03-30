@@ -19,7 +19,7 @@ namespace REPORTES
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmTablaAmortizacion());
+            Application.Run(new log());
         }
     }
 }

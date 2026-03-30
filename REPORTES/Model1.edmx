@@ -25,6 +25,8 @@
           <Property Name="Garantia" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="Sueldo" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="EsMoroso" Type="bit" />
+          <Property Name="Usuario" Type="nvarchar" MaxLength="50" />
+          <Property Name="Clave" Type="nvarchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="Moras">
           <Key>
@@ -57,6 +59,18 @@
           <Property Name="InteresGenerado" Type="decimal" Precision="18" Scale="2" />
           <Property Name="MontoTotal" Type="decimal" Precision="18" Scale="2" />
           <Property Name="FechaPrestamo" Type="date" />
+          <Property Name="Estado" Type="varchar" MaxLength="20" />
+          <Property Name="FechaProximoPago" Type="date" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <Association Name="FK__Moras__PrestamoI__5535A963">
           <End Role="Prestamos" Type="Self.Prestamos" Multiplicity="1" />
@@ -100,6 +114,7 @@
           <EntitySet Name="Moras" EntityType="Self.Moras" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Pagos" EntityType="Self.Pagos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Prestamos" EntityType="Self.Prestamos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__Moras__PrestamoI__5535A963" Association="Self.FK__Moras__PrestamoI__5535A963">
             <End Role="Prestamos" EntitySet="Prestamos" />
             <End Role="Moras" EntitySet="Moras" />
@@ -130,6 +145,8 @@
           <Property Name="Sueldo" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="EsMoroso" Type="Boolean" />
           <NavigationProperty Name="Prestamos" Relationship="Self.FK__Prestamos__Clien__3B75D760" FromRole="Clientes" ToRole="Prestamos" />
+          <Property Name="Usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Clave" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Moras">
           <Key>
@@ -167,6 +184,8 @@
           <NavigationProperty Name="Clientes" Relationship="Self.FK__Prestamos__Clien__3B75D760" FromRole="Prestamos" ToRole="Clientes" />
           <NavigationProperty Name="Moras" Relationship="Self.FK__Moras__PrestamoI__4316F928" FromRole="Prestamos" ToRole="Moras" />
           <NavigationProperty Name="Pagos" Relationship="Self.FK__Pagos__PrestamoI__3F466844" FromRole="Prestamos" ToRole="Pagos" />
+          <Property Name="Estado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="FechaProximoPago" Type="DateTime" Precision="0" />
         </EntityType>
         <Association Name="FK__Prestamos__Clien__3B75D760">
           <End Role="Clientes" Type="Self.Clientes" Multiplicity="1" />
@@ -222,6 +241,7 @@
             <End Role="Pagos" EntitySet="Pagos" />
           </AssociationSet>
           <EntitySet Name="Administradores" EntityType="PrestamosDBModel.Administradores" />
+          <EntitySet Name="sysdiagrams" EntityType="PrestamosDBModel.sysdiagrams" />
         </EntityContainer>
         <EntityType Name="Administradores">
           <Key>
@@ -230,6 +250,16 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Usuario" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Clave" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -240,6 +270,8 @@
           <EntitySetMapping Name="Clientes">
             <EntityTypeMapping TypeName="PrestamosDBModel.Clientes">
               <MappingFragment StoreEntitySet="Clientes">
+                <ScalarProperty Name="Clave" ColumnName="Clave" />
+                <ScalarProperty Name="Usuario" ColumnName="Usuario" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="NombreCompleto" ColumnName="NombreCompleto" />
                 <ScalarProperty Name="Correo" ColumnName="Correo" />
@@ -276,6 +308,8 @@
           <EntitySetMapping Name="Prestamos">
             <EntityTypeMapping TypeName="PrestamosDBModel.Prestamos">
               <MappingFragment StoreEntitySet="Prestamos">
+                <ScalarProperty Name="FechaProximoPago" ColumnName="FechaProximoPago" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
                 <ScalarProperty Name="Monto" ColumnName="Monto" />
@@ -292,6 +326,17 @@
                 <ScalarProperty Name="Clave" ColumnName="Clave" />
                 <ScalarProperty Name="Usuario" ColumnName="Usuario" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="PrestamosDBModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -58,7 +58,7 @@
             this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsuario.Location = new System.Drawing.Point(139, 197);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(152, 39);
+            this.lblUsuario.Size = new System.Drawing.Size(147, 38);
             this.lblUsuario.TabIndex = 2;
             this.lblUsuario.Text = "Usuario:";
             // 
@@ -68,19 +68,19 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(139, 293);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(120, 39);
+            this.label1.Size = new System.Drawing.Size(116, 38);
             this.label1.TabIndex = 3;
             this.label1.Text = "Clave:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(228, 74);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(265, 46);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(344, 39);
+            this.label2.Size = new System.Drawing.Size(237, 91);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Inserte y contraseña";
+            this.label2.Text = "Login";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // btnGuardar
@@ -107,6 +107,7 @@
             this.Controls.Add(this.txtUsuario);
             this.Name = "FrmFormularioDeAdmin";
             this.Text = "FrmFormularioDeAdmin";
+            this.Load += new System.EventHandler(this.FrmFormularioDeAdmin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

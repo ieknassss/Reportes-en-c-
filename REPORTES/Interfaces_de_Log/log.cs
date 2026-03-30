@@ -1,4 +1,5 @@
-﻿using System;
+﻿using REPORTES.Interfaces_de_Log;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,7 +27,7 @@ namespace REPORTES.Interfaces
 
         private void btnCliente_Click(object sender, EventArgs e)
         {
-            FrmMenuCliente frm = new FrmMenuCliente();
+            FrmFormularioDeCliente frm = new FrmFormularioDeCliente();
             frm.Show();
             this.Hide();
         }

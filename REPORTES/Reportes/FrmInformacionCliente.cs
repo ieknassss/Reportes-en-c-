@@ -43,5 +43,38 @@ namespace REPORTES.Reportes
         {
 
         }
+
+           private void button1_Click(object sender, EventArgs e)
+        {
+            // Validar que el usuario ingresó un ID
+            if (!int.TryParse(txtPrestamo.Text, out int clienteId))
+            {
+                MessageBox.Show("Ingrese un ID de cliente válido");
+                return;
+            }
+
+            var service = new ReporteService();
+
+            // Obtener el detalle del cliente por ID
+            var cliente = service.ObtenerDetalleCliente(clienteId);
+
+            if (cliente == null)
+            {
+                MessageBox.Show("No se encontró el cliente con ese ID");
+                return;
+            }
+
+            // Resetear y cargar el ReportViewer
+            reportViewer1.Reset();
+            reportViewer1.LocalReport.ReportPath = "Reportes/ReporteCliente.rdlc";
+
+            reportViewer1.LocalReport.DataSources.Clear();
+            reportViewer1.LocalReport.DataSources.Add(
+                new ReportDataSource("Clientes", new List<ReporteClienteDto> { cliente })
+            );
+
+            reportViewer1.RefreshReport();
+        }
     }
 }
+

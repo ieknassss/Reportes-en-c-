@@ -44,5 +44,36 @@ namespace REPORTES.Reportes
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int? prestamoId = null;
+            if (!string.IsNullOrWhiteSpace(txtPrestamo.Text))
+            {
+                if (!int.TryParse(txtPrestamo.Text, out int tmpId))
+                {
+                    MessageBox.Show("Ingrese un ID válido");
+                    return;
+                }
+                prestamoId = tmpId;
+            }
+
+            var service = new ReporteService();
+            var resumen = service.ObtenerResumenFinanciero(prestamoId);
+
+            if (resumen == null)
+            {
+                MessageBox.Show("No se encontró información financiera para este cliente");
+                return;
+            }
+
+            reportViewer1.Reset();
+            reportViewer1.LocalReport.ReportPath = "Reportes/ReporteFinanciero.rdlc";
+            reportViewer1.LocalReport.DataSources.Clear();
+            reportViewer1.LocalReport.DataSources.Add(
+                new ReportDataSource("ResumenFinanciero", new List<ReporteFinancieroDto> { resumen })
+            );
+            reportViewer1.RefreshReport();
+        }
     }
 }

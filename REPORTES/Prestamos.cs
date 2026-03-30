@@ -28,6 +28,8 @@ namespace REPORTES
         public Nullable<decimal> InteresGenerado { get; set; }
         public Nullable<decimal> MontoTotal { get; set; }
         public Nullable<System.DateTime> FechaPrestamo { get; set; }
+        public string Estado { get; set; }
+        public Nullable<System.DateTime> FechaProximoPago { get; set; }
     
         public virtual Clientes Clientes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

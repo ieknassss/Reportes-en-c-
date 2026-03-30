@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace REPORTES.Calculations
 {
@@ -95,24 +96,31 @@ namespace REPORTES.Calculations
             var tabla = new List<AmortizacionItem>();
 
             decimal saldo = monto;
-            decimal interesMensual = tasa / 12;
+            decimal interesMensual = Math.Round(tasa / 12, 8); // redondeo tasa mensual
 
-            decimal cuota = monto * (interesMensual * (decimal)Math.Pow(1 + (double)interesMensual, meses)) /
-                            ((decimal)Math.Pow(1 + (double)interesMensual, meses) - 1);
+            // Calcular cuota mensual con fórmula del sistema francés
+            decimal potencia = (decimal)Math.Pow(1 + (double)interesMensual, meses);
+            decimal cuota = monto * (interesMensual * potencia) / (potencia - 1);
+            cuota = Math.Round(cuota, 2); // redondeo cuota mensual
 
             for (int i = 1; i <= meses; i++)
             {
-                decimal interes = saldo * interesMensual;
-                decimal capital = cuota - interes;
-                saldo -= capital;
+                decimal interes = Math.Round(saldo * interesMensual, 2);
+                decimal capital = Math.Round(cuota - interes, 2);
+                saldo = Math.Round(saldo - capital, 2);
 
                 tabla.Add(new AmortizacionItem
                 {
                     Mes = i,
+                    SaldoAnterior = saldo + capital, // opcional, si quieres mostrar saldo anterior
                     Cuota = cuota,
                     Interes = interes,
                     Capital = capital,
-                    Saldo = saldo < 0 ? 0 : saldo
+                    Saldo = saldo < 0 ? 0 : saldo,
+                    MesesRestantes = meses - i,
+                    TotalInteresesAcumulados = tabla.Sum(t => t.Interes) + interes,
+                    TasaMensual = interesMensual,
+                    TasaAnual = tasa
                 });
             }
 

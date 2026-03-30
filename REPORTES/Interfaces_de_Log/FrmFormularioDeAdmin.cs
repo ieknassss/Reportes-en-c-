@@ -58,5 +58,10 @@ namespace REPORTES.Interfaces
                 }
             }
         }
+
+        private void FrmFormularioDeAdmin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
